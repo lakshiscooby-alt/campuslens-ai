@@ -468,6 +468,9 @@ The final Devpost submission will include:
 - Demo video
 - Gemma 4 usage
 - Hackathon challenge category
+### DEV.to Project Post
+
+[Read our DEV.to project post](https://dev.to/lakshiscoobyalt/campuslens-ai-a-gemma-4-multimodal-assistant-for-college-notices-3iip)
 
 ---
 
