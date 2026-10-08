@@ -110,7 +110,7 @@ st.header("💬 Ask CampusLens")
 
 question = st.text_input(
     "Ask a question about the uploaded notice",
-    placeholder="Example: What should I bring?"
+    placeholder="Example: Where is the movie screening?"
 )
 
 if st.button("Ask AI"):
@@ -122,7 +122,32 @@ if st.button("Ask AI"):
         st.warning("Please analyze a notice first.")
 
     else:
-        st.info(
-            "Q&A integration is the next step. "
-            "The notice analysis is already working!"
-        )
+        with st.spinner("Gemma 4 is thinking..."):
+
+            try:
+                notice = client.files.upload(file="uploaded_notice.jpg")
+
+                prompt = f"""
+You are CampusLens AI.
+
+Answer the student's question using ONLY the information
+contained in the uploaded college notice.
+
+Student question:
+{question}
+
+Do not guess or invent information.
+If the answer is not present in the notice, say:
+"That information is not mentioned in the notice."
+"""
+
+                response = client.models.generate_content(
+                    model="gemma-4-26b-a4b-it",
+                    contents=[notice, prompt]
+                )
+
+                st.success("Gemma 4's answer:")
+                st.write(response.text)
+
+            except Exception as e:
+                st.error(f"Something went wrong: {e}")
