@@ -1,122 +1,170 @@
-# \# 🎓 CampusLens AI
+# CampusLens AI
 
-# 
+> A multimodal AI assistant that uses Gemma 4 to understand college notices and documents, extract important information, and answer student questions.
 
-# > A multimodal AI assistant that uses \*\*Gemma 4\*\* to understand college notices and documents, extract important information, and answer student questions.
+---
 
-# 
+## 👥 Team — Synap Tech
 
-# \## 🚀 Overview
+| Member | Contribution |
+|---|---|
+| **Lakshithaa V** | AI/backend development, Gemma 4 integration, multimodal document processing, information extraction, Q&A, Git/GitHub |
+| **Pavitraa Surendran** | Streamlit UI, frontend development, upload/results/Q&A interface, frontend testing |
+| **Shivamihit G** | Documentation and presentation |
+| **Rithvik Kumar** | Prompt engineering, AI testing, edge cases |
 
-# 
+---
 
-# College students receive important information through notices, posters, assignment sheets, event announcements, and other visual documents.
+# 🎯 The Problem
 
-# 
+College students regularly receive important information through:
 
-# Finding one specific detail — such as a date, venue, deadline, or requirement — can be time-consuming.
+- College notices
+- Posters
+- Circulars
+- Assignment sheets
+- Event announcements
+- Other visual documents
 
-# 
+These documents often contain important details such as:
 
-# \*\*CampusLens AI\*\* solves this by allowing students to upload a document and interact with it using natural language.
+- Dates
+- Times
+- Venues
+- Deadlines
+- Requirements
+- Event information
 
-# 
+Finding this information manually can be time-consuming, especially when students need a quick answer.
 
-# Instead of manually searching through a notice, students can simply ask:
+## Why We Chose This Problem
 
-# 
+Students deal with college information every day, but this information is often presented in visually dense documents.
 
-# > "Where is the movie screening?"
+We wanted to build a simple AI assistant that can turn these documents into information students can actually use.
 
-# 
+---
 
-# CampusLens analyzes the document with \*\*Gemma 4\*\* and provides a direct answer.
+# 💡 Our Solution
 
-# 
+**CampusLens AI** is a multimodal AI assistant designed for understanding college documents.
 
-# \---
+A student can upload a notice or document, and **Gemma 4** analyzes the visual content to understand the information.
 
-# 
+CampusLens then:
 
-# \## ✨ Features
+1. Extracts important information.
+2. Presents the information in a structured format.
+3. Allows students to ask questions about the uploaded document.
 
-# 
+### Core Workflow
 
-# \- 📄 Upload college notices and posters
+**Upload Document → Gemma 4 → Understand → Extract Information → Ask Questions**
 
-# \- 🧠 Multimodal document understanding with \*\*Gemma 4\*\*
+---
 
-# \- 📋 Automatically extract:
+# ✨ Key Features
 
-# &#x20; - Event
+## 📄 Multimodal Document Understanding
 
-# &#x20; - Date
+CampusLens uses Gemma 4 to understand visual college notices and documents.
 
-# &#x20; - Time
+## 🔎 Structured Information Extraction
 
-# &#x20; - Venue
+The application extracts:
 
-# &#x20; - Deadline
+- Event
+- Date
+- Time
+- Venue
+- Deadline
+- Requirements
+- Summary
+- Important Details
 
-# &#x20; - Requirements
+## 💬 Ask Questions
 
-# &#x20; - Important details
+Students can ask natural-language questions about the uploaded document.
 
-# \- 💬 Ask natural-language questions about the document
+Examples:
 
-# \- ⚡ Get concise answers based only on the uploaded notice
+> "What do I need to bring?"
 
-# \- 🎨 Simple and student-friendly interface
+> "When is the event?"
 
-# 
+> "Where is it happening?"
 
-# \---
+> "What time does the event start?"
 
-# 
+## 🛡️ No Guessing
 
-# \## 🧠 Why Gemma 4?
+Our prompt instructs Gemma 4 not to invent information.
 
-# 
+If a detail is not present in the document, CampusLens reports:
 
-# Gemma 4 is the core intelligence behind CampusLens.
+> "Not mentioned"
 
-# 
+This helps reduce misleading answers.
 
-# CampusLens uses Gemma 4's multimodal capabilities to understand information directly from visual documents rather than relying only on manually extracted text.
+## 🎓 Student-Focused Interface
 
-# 
+The application is designed around a simple workflow:
 
-# \### CampusLens workflow
+**Upload → Analyze → Understand → Ask**
 
-# 
+---
 
-# ```text
+# 🤖 Why Gemma 4?
 
-# &#x20;       📄 College Notice
+Gemma 4 is the core intelligence behind CampusLens AI.
 
-# &#x20;              │
+We use the multimodal capabilities of Gemma 4 to understand visual content from college notices instead of relying only on traditional text extraction.
 
-# &#x20;              ▼
+This allows CampusLens to reason about information contained inside an image and answer questions about the document.
 
-# &#x20;      ┌─────────────────┐
+### Model Used
 
-# &#x20;      │    Gemma 4      │
+`gemma-4-26b-a4b-it`
 
-# &#x20;      │ Multimodal AI   │
+We selected this Gemma 4 model because it provided reliable performance in our hackathon development environment.
 
-# &#x20;      └─────────────────┘
+---
 
-# &#x20;              │
+# 💡 Innovation and Differentiation
 
-# &#x20;              ▼
+CampusLens is designed specifically around a common student problem: **understanding information hidden inside college documents quickly.**
 
-# &#x20;     📋 Structured Info
+Instead of simply extracting text from an image, CampusLens combines:
 
-# &#x20;              │
+- Multimodal document understanding
+- Structured information extraction
+- Natural-language question answering
+- A student-focused interface
 
-# &#x20;              ▼
+This creates a simple workflow where students can go from a visual notice to actionable information without manually reading through the entire document.
 
-# &#x20;       💬 Student Q\&A
-## 📸 Demo
+---
 
-![CampusLens AI Demo](demo.png)
+# 🏗️ Technical Implementation
+
+## Architecture
+
+```text
+                College Notice / Document
+                         │
+                         ▼
+                  Streamlit Upload
+                         │
+                         ▼
+                    Gemma 4
+                Multimodal Analysis
+                         │
+             ┌───────────┴───────────┐
+             ▼                       ▼
+     Structured Extraction       Q&A Context
+             │                       │
+             ▼                       ▼
+       Student-Friendly        Student Questions
+           Results                    │
+                                     ▼
+                              Gemma 4 Answer
