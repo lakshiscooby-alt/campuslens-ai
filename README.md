@@ -168,3 +168,260 @@ This creates a simple workflow where students can go from a visual notice to act
            Results                    │
                                      ▼
                               Gemma 4 Answer
+echnology Stack
+Python
+Streamlit
+Google GenAI SDK
+Gemma 4
+Git
+GitHub
+⚙️ How It Works
+1. Upload
+
+The student uploads a college notice or document.
+
+2. Multimodal Understanding
+
+The uploaded image is sent to Gemma 4 for visual understanding.
+
+3. Information Extraction
+
+Gemma 4 identifies important information such as:
+
+Event
+Date
+Time
+Venue
+Deadline
+Requirements
+4. Results
+
+CampusLens presents the extracted information in a structured, easy-to-read format.
+
+5. Ask Questions
+
+The student can ask additional questions about the uploaded document.
+
+Gemma 4 generates an answer based on the document.
+
+🧪 Example
+
+For a college event notice, CampusLens can produce:
+
+EVENT:
+Ugadi 25 Celebration
+
+DATE:
+March 29 & 30, 2025
+
+TIME:
+March 29: 4:30 PM – 7:30 PM
+March 30: 12:15 PM – 5:30 PM
+
+VENUE:
+New Auditorium
+Amriteswari Hall
+
+DEADLINE:
+Not mentioned
+
+Example question:
+
+"Where is the movie screening?"
+
+CampusLens can answer based on the information contained in the uploaded notice.
+
+🚀 Implementation During the Hackathon
+
+During the hackathon, our team focused on building a working end-to-end MVP rather than adding unnecessary features.
+
+The main implementation stages were:
+
+Set up the Gemma 4 development environment.
+Integrated the Google GenAI SDK.
+Tested Gemma 4 text generation.
+Tested multimodal document understanding.
+Designed prompts for structured information extraction.
+Built the Streamlit frontend.
+Added document upload and image preview.
+Added structured analysis results.
+Added document-based Q&A.
+Tested the application using a real college notice.
+Collaborated through GitHub.
+Recorded a working demonstration.
+
+Our final MVP focuses on the core workflow:
+
+Upload → Analyze → Extract → Ask
+
+🧠 Challenges & Learnings
+Challenges
+Model Availability and Stability
+
+During development, we initially tested another Gemma 4 model configuration that returned HTTP 500 errors in one development environment.
+
+We tested the available Gemma 4 models and selected:
+
+gemma-4-26b-a4b-it
+
+because it provided reliable results for our working application.
+
+Multimodal Integration
+
+Connecting image uploads with Gemma 4 and getting useful structured responses required testing both the API integration and prompts.
+
+Prompt Engineering
+
+We needed to design prompts that:
+
+Extract the correct information.
+Return consistent fields.
+Avoid inventing missing information.
+Support follow-up questions.
+Git Collaboration
+
+Since multiple team members were developing different parts of the project simultaneously, we encountered Git synchronization issues.
+
+We learned to use collaborative workflows such as:
+
+git pull --rebase origin main
+git push origin main
+
+instead of force-pushing changes.
+
+Hackathon Time Constraints
+
+With limited hackathon time, we prioritized a reliable core MVP instead of attempting too many additional features.
+
+📚 What We Learned
+
+Through this project, we gained practical experience with:
+
+Gemma 4 multimodal AI
+Prompt engineering
+Structured information extraction
+AI-powered question answering
+Streamlit application development
+Google GenAI SDK
+Git and GitHub collaboration
+Rapid MVP development
+Testing AI applications with real-world documents
+🔮 Future Scope
+
+CampusLens can be extended with:
+
+📅 Calendar integration
+🔔 Smart reminders for deadlines
+✅ Automatic action-item generation
+📚 Support for more document types
+🌐 Multilingual document understanding
+🔍 Search across multiple uploaded campus documents
+📱 Improved mobile experience
+🏫 Integration with college information systems
+
+These features are potential future improvements beyond the current hackathon MVP.
+
+🖥️ Working Application
+
+CampusLens currently runs as a Streamlit application.
+
+Demo Video
+
+▶️ Watch the CampusLens AI Demo
+
+The demo shows the core workflow:
+
+Upload → Gemma 4 Analysis → Information Extraction → Q&A
+
+GitHub Repository
+
+https://github.com/lakshiscooby-alt/campuslens-ai
+
+📸 Demo
+
+🔧 Setup & Usage
+1. Clone the Repository
+git clone https://github.com/lakshiscooby-alt/campuslens-ai.git
+cd campuslens-ai
+2. Install Dependencies
+pip install -r requirements.txt
+3. Configure the Gemini API Key
+
+Set the GEMINI_API_KEY environment variable.
+
+For Git Bash:
+
+export GEMINI_API_KEY="YOUR_API_KEY"
+
+For Windows PowerShell:
+
+$env:GEMINI_API_KEY="YOUR_API_KEY"
+
+Do not commit or share your API key.
+
+4. Run the Application
+python -m streamlit run app.py
+
+The application will open in your browser.
+
+🔐 Open Source & AI Usage
+
+CampusLens AI was developed as an open-source hackathon project.
+
+AI Model
+
+Gemma 4 is the core multimodal AI model used for:
+
+Understanding uploaded documents
+Extracting structured information
+Answering student questions
+SDK
+
+The project uses the Google GenAI SDK to interact with the model.
+
+Open Source
+
+The source code is available in this repository for others to explore and build upon.
+
+🏆 Hackathon Submission
+
+Hackathon: MLH Hacktoberfest Hack Day Coimbatore
+
+Team: Synap Tech
+
+Challenge Focus: Best Use of Gemma 4
+
+Demo Video:
+https://youtu.be/EYpPQo6tEKM
+
+Repository:
+https://github.com/lakshiscooby-alt/campuslens-ai
+
+📝 Devpost Submission
+
+The final Devpost submission will include:
+
+Project description
+Problem statement
+Solution
+Key features
+Technical implementation
+Team contributions
+GitHub repository
+Demo video
+Gemma 4 usage
+Hackathon challenge category
+📜 Credits and License
+
+Built by Synap Tech during the MLH Hacktoberfest Hack Day Coimbatore.
+
+Team
+Lakshithaa V
+Pavitraa Surendran
+Shivamihit G
+Rithvik Kumar
+License
+
+This project is released under the MIT License.
+
+See LICENSE for details.
