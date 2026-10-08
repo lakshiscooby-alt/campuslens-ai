@@ -508,5 +508,5 @@ See [LICENSE](LICENSE) for details.
 - [x] Challenges and learnings documented
 - [x] Setup instructions
 - [x] Open-source information
-- [ ] Final Devpost submission
-- [ ] Final hackathon submission
+- [x] Final Devpost submission
+- [x] Final hackathon submission
