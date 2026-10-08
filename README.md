@@ -117,4 +117,6 @@
 # &#x20;              ▼
 
 # &#x20;       💬 Student Q\&A
+## 📸 Demo
 
+![CampusLens AI Demo](demo.png)
